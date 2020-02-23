@@ -1,3 +1,9 @@
+body {
+	overflow: scroll; /* qd a scroll aparece, pq um elemento 
+	se tornou visivel, não faz os outros elementos se reposicionarem 
+	pq a o espaço da scroll já estará previamente reservado */
+}
+
 .campo-digitacao {
 	border: 3px solid black;
 	font-family: "Consolas";
@@ -29,4 +35,8 @@
 
 .informacoes li, .contadores li {
 	display: inline-block;
+}
+
+.placar {
+	display: none;
 }

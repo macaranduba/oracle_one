@@ -116,16 +116,3 @@ function reiniciaJogo() {
 	campo.removeClass("borda-vermelha");
 	campo.removeClass("borda-verde");
 }
-
-$( ".botao-remover" ).click( function (event) {
-	event.preventDefault(); // não executa o href do <a> ou o submit do form
-
-	// quem foi clicado (this) foi a <td>
-	console.log(this); // this = tag HTML
-	console.log($(this)); // $(this) = Objeto jQuery
-	
-	//$(this).parent().parent().remove(); // $() torna o "this" num objeto jQuery
-	$(this).parent().parent().hide(); // apenas esconde!
-
-});
-
