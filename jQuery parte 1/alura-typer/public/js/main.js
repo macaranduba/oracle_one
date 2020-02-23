@@ -28,6 +28,11 @@ function atualizaTamanhoFrase() {
 	tamanhoFraseSPAN.text(fraseNumPalavras);
 }
 
+function atualizaTempoInicial(tempo) {
+	$("#tempo-digitacao").text( tempo );
+	tempoInicial = tempo;
+}
+
 function inicializaContadores() {
 	// sempre que o valor do campo for alterado
 	campo.on("input", function () {
@@ -40,6 +45,8 @@ function inicializaContadores() {
 }
 
 function inicializaMarcadores() {
+	var frase = $(".frase").text();
+
 	//console.log(frase);
   var digitado = campo.val();
   var comparavel = frase.substring(0, digitado.length);
@@ -56,7 +63,6 @@ function inicializaMarcadores() {
 	campo.toggleClass("borda-vermelha", ! correto);
 }
 
-var frase = $(".frase").text();
 campo.on("input", function () {
 	inicializaMarcadores();
 });
@@ -64,11 +70,12 @@ campo.on("input", function () {
 
 // sempre que o campo for selecionado
 function inicializaCronometro() {
-	var tempoRestanteSPAN = $("#tempo-digitacao");
-	var tempoRestante = tempoRestanteSPAN.text();
-	// a função one descarta eventos iguais seguintes
-	campo.one("focus", function () {
+	
+	campo.one("focus", function () { // a função one descarta eventos iguais seguintes
 //campo.on("focus", function () { // a função on capta o 1º e todos os eventos posteriores
+		var tempoRestanteSPAN = $("#tempo-digitacao");
+		var tempoRestante = tempoRestanteSPAN.text();
+
 		desabilitaIcon("#botao-reiniciar");
 			/*$("#botao-reiniciar").attr("disabled",true);
 			$("#botao-reiniciar").addClass("disabled");*/
