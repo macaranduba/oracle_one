@@ -1,7 +1,5 @@
 console.log("placar.js carregado");
 
-$("#botao-placar").click( mostraPlacar );
-
 function inserePlacar() {
 	var tbody = $(".placar > table > tbody");
 	//var tabela = $(".placar").find("tbody");
@@ -17,8 +15,22 @@ function inserePlacar() {
 	//tbody.prepend() adiciona antes
 
 	$(".placar").slideDown(500);
+	scrollPlacar();
 
 	console.log("Inserido no Placar...");
+}
+
+function scrollPlacar() {
+	var posicaoPlacar = $(".placar").offset().top;
+	console.log("bottom = " + $(".placar").offset().bottom);
+	console.log("posicaoPlacar = " + posicaoPlacar);
+	$( "html, body" ).animate ( 
+		{ scrollTop:	posicaoPlacar+"px" 
+	  }, 
+	  1000 
+	);
+	// 1º argumento: propriedades css a animar
+	// 2º parâmetro: o tempo da animação
 }
 
 function novaLinha(usuario, numPalavras) {
@@ -48,20 +60,23 @@ function novaLinha(usuario, numPalavras) {
 	linha.append(colunaNumPalavras);
 	linha.append(colunaRemover);
 
-	console.log(linha);
 	return linha;
 }
 
 function removeLinha() {
 	console.log("removeLinha chamada!");
+	console.log(event);	
+
+	event.preventDefault();
 
 	// no jQuery, $() torna o "this" num objeto jQuery
+	console.log("removeLinha "); 
 	console.log(this); // this = tag HTML
 	console.log($(this)); // $(this) = Objeto jQuery
 
 	// quem foi clicado (this) foi a <td>
 	var linha = $(this).parent().parent();
-
+/*
 	// fadeOut vai diminuindo a opacidade e coloca "display: none" ao final
 	linha.fadeOut(1000); // tempo do fade out
 
@@ -69,13 +84,26 @@ function removeLinha() {
 		// remove efetivamente do html
 		linha.remove(); 
 	}, 1000);
-	
+*/
+	linha.fadeOut(function () { // só remove após terminar o fade out
+		linha.remove(); 
+	});
+
+
 	//$(this).parent().parent().hide(); // apenas esconde!
 }
 
 // trata o evento para que já está no html inicial
-$( ".botao-remover" ).click( removeLinha );
+$( ".botao-remover" ).click( removeLinha /*function (event) {
+	event.preventDefault();
+	console.log(".botao-remover click"); 
+	console.log(this); // this = tag HTML
+	console.log($(this)); // $(this) = Objeto jQuery
 
+	removeLinha(); 
+}*/);
+
+$("#botao-placar").click( mostraPlacar );
 function mostraPlacar() {
 	//$(".placar").css("display", "block");
 	//$(".placar").show();
@@ -84,10 +112,8 @@ function mostraPlacar() {
 
 	$(".placar").stop(); // termina a animação atual antes de iniciar a próxima
 	$(".placar").slideToggle(900);
-	
 	// $(".placar").stop().slideToggle(900);
 
 	//console.log("togglando!");
-
 }
 
