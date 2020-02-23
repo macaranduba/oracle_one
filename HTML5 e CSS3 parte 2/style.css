@@ -1,0 +1,410 @@
+/* Pseudo elementos: 
+:hover :active  :visited :required;
+*/
+
+body { /* body: aplica a todo o conteúdo do site */
+	/* sans-serif é a fonte alternativa */
+	font-family: 'Montserrat', sans-serif;
+}
+
+header {
+	background: #BBBBBB;
+	padding: 20px 0; /* "topo e baixo" e "direita e esquerda"*/
+}
+
+.caixa {
+	position: relative; 
+	width: 940px; /*largura padrão*/
+	margin: 0 auto; /* "topo e baixo" e "direita e esquerda"*/
+}
+
+nav {
+	position: absolute; /* define novo ponto inicial do elemento*/
+	top: 110px;
+	right: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0 0 0 15px; /* topo, direita, baixo, esquerda*/
+}
+
+nav a {
+	color: #000000;
+	font-size: 22px;
+	font-weight: bold;
+	text-decoration: none; /* retira o sublinhado padrão */
+	text-transform: uppercase;
+}
+
+nav a:hover {
+	color: #C78C19;
+	text-decoration: underline;
+}
+
+.produtos {
+	width: 940px;
+	margin: 0 auto;
+	padding: 50px 0px;
+  text-align: center;
+}
+
+
+.produtos li {
+	box-sizing: border-box; /* evita adicionar os "px" 
+	do "padding" aos "30%" do "width" para incluir o 
+	padding no width */
+	display: inline-block;
+	margin: 0 1.5%;
+	padding: 30px 20px;
+	text-align: center;
+	vertical-align: top;
+	width: 30%;
+
+	/*border-color: #000000;
+	border-width: 2px;
+	border-style: solid;*/
+	border: 4px solid #000000;
+	border-radius: 10px;
+
+	/*border-bottom-right-radius: 100px;*/
+	/*border-top-width: 10px; */
+
+  /*background: #CCCCCC;  /* ajuda a fazer debug */
+}
+
+.produtos li:hover { /* hover - mouse por cima do elemento */
+	border-color: #C78C19;
+}
+
+.produtos li:active { /* active - elemento clicado */
+	border-color: #088C19;
+}
+
+.produtos li:hover h2 {
+	font-size: 34px;
+}
+
+.produtos h2 {
+	background: red;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.produtos img {
+	/*border: 2px solid yellow;*/
+	width: 100%;
+}
+
+.produto-descricao {
+ 	font-size: 18px;
+}
+
+.produto-preco {
+ 	font-size: 22px;
+ 	font-weight: bold;
+ 	margin-top: 10px;
+}
+
+footer {
+	background: url("bg.jpg");
+	padding: 30px 0;
+	text-align: center;
+}
+
+.copyright {
+	color: #FFFFFF;
+	font-size: 13px;
+	margin-top: 20px;
+}
+
+/*
+ seleciona todos os filhos diretos de <main> do tipo <p> 
+main > p {
+	background: red;
+}
+
+/* seleciona o 1º irmão do tipo <p> APÓS <img>  
+img + p {
+	background: blue;
+}
+
+/* selecionar TODOS os irmãos do tipo <p>  APÓS <img>
+img ~ p {
+	background: yellow;
+}
+
+/* seleciona todos os <p> que não tenham id="missao" 
+.principal p:not(#missao) {
+	background: orange;
+}*/
+
+/***********/
+/* CONTATO */
+/***********/
+
+form {
+	margin: 40px 0;
+}
+
+form label, form legend {
+	display: block;
+	font-size: 20px;
+	margin: 0 0 10px;
+}
+
+.input-padrao {
+	border-radius: 10px;
+	display: block;
+	margin: 0 0 20px;
+	padding: 10px 15px;
+	width: 50%;
+}
+
+textarea.input-padrao {
+	border-radius: 20px 20px 0px 20px;
+}
+
+.checkbox {
+	margin: 20px 0;
+}
+
+/*
+	No CSS, #id .class <tag>, a força/prioridade do seletor
+	é = 100*id + 10*class + 1*tag
+
+	Selector CSS: #id <tag>.class
+	Nada sobrepoem o CSS inline (atributo style="")
+*/
+
+.enviar {
+	background: orange;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 15px 0;
+	transition: 1s all; /* background, ...*/
+	width: 40%;
+}
+
+.enviar:hover { 
+	background: green;
+	transform: scale(1.2) /*rotate(360deg)*/;
+	/* a 1º propriedade vai ser ignora e reescrita pela 2ª
+	transform: scale(1.2);  aumenta o botão em 20%
+	transform: rotate(80deg);
+	*/
+}
+
+table {
+	margin: 20px 0 40px;
+}
+
+thead {
+	background: #555555;
+	color: white;
+	font-weight: bold;
+}
+
+th, td {
+	border: 1px solid #000000;
+	padding: 8px 15px ;
+	text-align: center;
+}
+
+/************/
+/*** HOME ***/
+/************/
+
+.banner {
+	width: 100%;
+}
+
+.titulo-principal {
+	/* color: rgb(0, 0, 0); /* preto = #000000 */
+	/*color: rgba(0, 0, 0, .3); /* rgb com opacidade */
+	font-size: 2em;  /* 2x o tamanho padrão da fonte*/
+	font-weight: bold;
+	margin: 0 0 1em; /* espaço para baix proporcional ao tamanho da fonte*/
+	text-align: center;
+	/*text-shadow: 2px 2px #FF0000;*/
+	
+	clear: left; /* limpa o float de .utensilios*/
+}
+
+.titulo-principal:first-letter {
+	text-decoration: underline;
+}
+
+.titulo-principal:before {
+	content: " * ";
+}
+
+.titulo-principal:after {
+	content: " ] ";
+}
+
+/*p:first-line {
+	font-style: italic;
+}*/
+
+.principal {
+	background: #FEFEFE; /* quase branco */
+	padding: 3em 0;
+	width: 940px;
+	margin: 0 auto;
+}
+
+.principal p { 
+	margin: 0 0 1em; 
+}
+
+.principal strong {
+	font-weight: bold;
+}
+
+.principal em {
+	font-style: italic;
+}
+
+.utensilios {
+	float: left; /* tags abaixo vão circunscrever esta class*/
+	margin: 0 20px 20px 0;
+	width: 20%;
+}
+
+ /* gradiente 
+	background: linear-gradient(45deg, orange 50%, blue, red, black);	
+	background: radial-gradient(orange 50%, blue, red, black);	
+ */
+
+.mapa {
+	background: linear-gradient(#FEFEFE, #888888);	
+	padding: 3em 0; /* proporcional ao tam da fonte do site */
+}
+
+.mapa-conteudo {
+	width: 940px;
+	margin: 0 auto;	
+}
+
+.mapa p {
+	margin: 0 0 2em;
+	text-align: center;
+}
+
+.beneficios {
+	background: #888888; /* cinza */
+	/* Sombra INTERNA*/
+	/*box-shadow: inset 0px 0px 30px #FF0000; /* inset x y espaçamento */
+	padding: 3em 0;
+}
+
+.conteudo-beneficios {
+	margin: 0 auto;
+	width: 640px;
+}
+
+.lista-beneficios {
+	/*border: 1px solid;*/
+	display: inline-block;
+	vertical-align: top;
+	width: 40%;
+}
+
+.lista-beneficios li:first-child {
+	color: blue;
+	transition: 1s all; /* background, ...*/
+	width: 20px;
+}
+
+.lista-beneficios li:first-child:hover {
+	color: yellow;
+	transform: rotate(360deg);
+}
+
+.itens {
+	border: 1px solid;
+	line-height: 1.5em;
+}
+
+/* unicode table or characters */
+.itens:before {
+	content: "🟊";
+}
+
+/* first-child last-child nth-child(4) nth-child(2n-1)*/
+.itens:nth-child(2n-1) {
+	font-weight: bold;
+}
+
+.beneficios:nth-child(2) img {
+	background: red;
+	border: 2px solid;
+	padding: 20px 20px;
+	overflow:hidden;
+}
+
+.imagem-beneficios {
+	/* Sombras por TRÁS do elemento */
+	/* box-shadow: 10px 10px #000000 /* sombra: x y cor ; */
+	/* box-shadow: 10px 10px 5px #000000; /* sombra: x y blur (espalhamento da sombra ou transição) cor; */
+	/* box-shadow: 10px 10px 30px 20px #000000; /* sombra: x y blur "tamanho da borda (aproxima a luz)" cor; */
+  /* box-shadow: 10px 10px 30px 20px #000000, -10px -10px yellow, -20px 20px rgba(255, 0, 0, 0.5); /* várias sombras separadas por vírgula */
+  box-shadow: 10px 10px 10px 0px #000000; 
+
+	opacity: 1; /* opacidade de 0 a 1*/
+	transition: 400ms;
+	width: 60%;
+}
+
+.imagem-beneficios:hover {
+	opacity: .3; /* opacidade de 0 a 1*/
+	/*transform: rotate(45deg);*/
+}
+
+.video {
+	margin: 2em auto;
+	width: 560px;
+}
+
+/* screen print (impressora) ? (fala) */
+@media screen and (max-width: 480px) {
+	/*body {
+		background: red;
+	}*/
+	.caixa, .principal, .conteudo-beneficios, 
+	.mapa-conteudo, .video  {
+		width: auto;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	nav {
+		position: static;
+	}
+
+	.lista-beneficios, .imagem-beneficios {
+		width: 100%;
+	}
+
+	.produtos, .produtos li {
+		width: auto;
+	}
+
+	form *:not(.enviar) {
+		margin-left: 10%;
+	}
+
+	.enviar {
+		display: block;
+		margin: 0px auto;
+		text-align: center;
+		width: 60%;
+	}
+}

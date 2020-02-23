@@ -1,0 +1,27 @@
+<canvas width="400" height="400"></canvas>
+
+<script type="text/javascript">
+	var tela = document.querySelector('canvas');
+	var pincel = tela.getContext('2d');
+	
+	// 1
+	pincel.fillStyle = 'orange';
+	pincel.fillRect(0, 0, 400, 400);
+
+	// ouside triangle
+	pincel.beginPath();
+	pincel.moveTo(50, 50);
+	pincel.lineTo(50, 400);
+	pincel.lineTo(400, 400);
+	pincel.fillStyle = 'black';
+	pincel.fill();	
+
+	// inside triangle
+	pincel.beginPath();
+	pincel.moveTo(100, 175);
+	pincel.lineTo(100, 350);
+	pincel.lineTo(275, 350);
+	pincel.fillStyle = 'white';
+	pincel.fill();	
+
+</script>

@@ -1,0 +1,32 @@
+<canvas width="350" height="300"></canvas>
+
+<script type="text/javascript">
+	var tela = document.querySelector('canvas');
+	var pincel = tela.getContext('2d');
+	
+	// 1
+	pincel.fillStyle = 'green';
+	pincel.fillRect(0, 0, 350, 300);
+
+	// 2 90x90
+	pincel.fillStyle = 'black';
+	pincel.fillRect(350/2-70/2-90, 300/2-90, 90, 90);
+
+	// 3 90x90
+	pincel.fillStyle = 'black';
+	pincel.fillRect(350/2+70/2, 300/2-90, 90, 90);
+
+	// 4 70x100
+	pincel.fillStyle = 'black';
+	console.log(350/2 - 70/2);
+	pincel.fillRect(350/2 - 70/2, 300/2, 70, 100);
+
+	// 5 40x110
+	pincel.fillStyle = 'black';
+	pincel.fillRect(350/2 - 70/2 - 40, 300-110, 40, 110);
+
+	// 6 40x110
+	pincel.fillStyle = 'black';
+	pincel.fillRect(350/2 + 70/2, 300-110, 40, 110);
+
+</script>

@@ -1,0 +1,59 @@
+/* RGB #RRGGBB em que R, G ou B é:
+ "0" - ausência de cor - "preto"; ou
+ "F" - cor total - red, green, blue 
+
+ rgb(0-255, 0-255, 0-255) seguindo 
+ a mesma ideia anterior
+*/
+body {
+}
+
+#banner {
+	width: 100%;
+}
+
+.principal {
+	background: #CCCCCC;
+	padding: 30px;
+}
+
+.titulo-principal {
+	padding-left: 20px;
+}
+
+.titulo-centralizado {
+	text-align: center;
+}
+
+p {
+	text-align: center;	
+}
+
+#missao {
+	font-size: 20px;
+}
+
+/* todos os <strong> que estejam dentro de <em>*/
+em strong {
+	color: #00FF00;
+}
+
+.itens {
+	font-style: italic;
+}
+
+.beneficios {
+	background: #FFFFFF;
+	padding: 20px;
+}
+
+ul {
+	display: inline-block; /*inline, block ou inline-block*/
+	vertical-align: top;
+	width: 20%; /* 20% da largura da página */
+	margin-right: 15%;
+}
+
+.imagem-beneficios {
+	width: 50%;
+}

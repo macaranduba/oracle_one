@@ -1,0 +1,47 @@
+<canvas width="600" height="400"></canvas>
+<br>
+Escolha uma cor <input type="color">
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'gray';
+    pincel.fillRect(0, 0, 600, 600);
+    var raio = 20;
+
+    var cores = ['blue', 'red', 'green'];
+    var indiceCor = 0;
+    tela.oncontextmenu = function () {
+        indiceCor = (indiceCor + 1) % cores.length
+        return false; // evite apresentar o menu de contexto
+    }
+
+    var isMouseDown = false;
+    tela.onmousedown = function () {
+        isMouseDown = true;
+    }
+    tela.onmouseup = function () {
+        isMouseDown = false;
+    }
+    tela.onmousemove = function (evento) {
+        if (isMouseDown) {
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop
+            //pincel.fillStyle = cores[indiceCor];
+            console.log(document.querySelector('input').value);
+            pincel.fillStyle = document.querySelector('input').value;
+            pincel.beginPath();
+            if ( evento.shiftKey && raio < 40) {
+                raio += 20;
+            } else if (evento.altKey && raio > 5) {
+                raio -= 5;
+            }
+            pincel.arc(x, y, raio, 0, 2 * Math.PI);
+            pincel.fill();
+            //console.log(evento);
+            //console.log(tela.offsetLeft + " " + tela.offsetTop);
+        }    
+    }
+
+</script>

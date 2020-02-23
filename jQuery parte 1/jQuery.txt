@@ -1,0 +1,6 @@
+jquery.com
+ - fazer mais, escrevendo menos
+ - jabascrip compatível com mais navegadores
+ - versão produção (menos Kbytes com redução do nome de variáveis, funcções e tudo na mesma linha)
+ - versão desenvolvimento (código legível por humanos);
+ - versão slim: sem ajax e nem animações

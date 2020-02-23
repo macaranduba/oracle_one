@@ -1,0 +1,47 @@
+Teste o seguinte código abaixo, que desenha um alvo:
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+  var tela = document.querySelector('canvas');
+  var pincel = tela.getContext('2d');
+
+  pincel.fillStyle = 'lightgray';
+  pincel.fillRect(0, 0, 600, 400);
+  //pincel.clearRect(0, 0, 600, 400);
+
+  function desenhaCirculo(x, y, raio, cor) {
+
+    pincel.fillStyle = cor;
+    pincel.beginPath();
+    pincel.arc(x, y, raio, 0, 2 * Math.PI);
+    pincel.fill();  
+  }
+
+  var x = 40;
+  var passo = 2;
+  var raio = 20, raioVar = 0, raioPasso = -1;
+  function animacao() {
+  	if ( x == 580 || x == 20 ) {
+  		passo *= -1;	
+  	} 
+  	if ( raioVar == 10 || raioVar == 0) {
+  		raioPasso *= -1; 
+  	}
+  	raioVar += raioPasso;
+
+    //console.log('oi')
+    //desenhaCirculo((x-14), 40, (raio + raioVar), 'white');
+    
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect((x-passo)-(raio + raioVar + 10 ), 40 - (raio + raioVar + 10 ), (raio + raioVar + 10 ) * 2, (raio + raioVar + 10) * 2);
+    //pincel.clearRect((x-passo)-20, 20, (raio + raioVar) * 2, (raio + raioVar) * 2);
+
+    desenhaCirculo(x, 40, (raio + raioVar), 'red');
+    x += passo;
+  }
+
+  setInterval(animacao, 10);
+
+
+</script>

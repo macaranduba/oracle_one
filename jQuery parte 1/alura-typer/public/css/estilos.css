@@ -1,0 +1,32 @@
+.campo-digitacao {
+	border: 3px solid black;
+	font-family: "Consolas";
+	font-size: 20px;
+	height: 100px;
+}
+
+.borda-verde {
+	border: 3px solid green;
+}
+
+.borda-vermelha {
+	border: 3px solid red;
+}
+
+.campo-desativado {
+	background-color: red;
+}
+
+.frase {
+	font-size: 20px;
+	text-align: left;
+}
+
+.icones {
+	margin-top: 5px;
+	vertical-align: middle;
+}
+
+.informacoes li, .contadores li {
+	display: inline-block;
+}
