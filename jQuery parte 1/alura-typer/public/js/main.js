@@ -102,16 +102,6 @@ function desabilitaIcon(id) {
 	$(id).addClass("disabled");
 }
 
-$( ".botao-remover" ).click( function (event) {
-	event.preventDefault(); // não executa o href do <a> ou o submit do form
-
-	// quem foi clicado (this) foi a <td>
-	console.log(this); // this = tag HTML
-	console.log($(this)); // $(this) = Objeto jQuery
-	
-	$(this).parent().parent().remove(); // $() torna o "this" num objeto jQuery
-});
-
 function reiniciaJogo() {
 	console.log("Reiniciando");
 	campo.attr("disabled", false);
@@ -135,7 +125,8 @@ function inserePlacar() {
 	var usuario = "Zecas";
 	var numPalavras = $("#contador-palavras").text();
 
-	var linha = novaLinha();
+	var linha = novaLinha(usuario, numPalavras);
+	linha.find(".botao-remover").click(removeLinha);
 
 	tbody.append(linha);
 	//tbody.prepend() adiciona antes
@@ -171,7 +162,22 @@ function novaLinha(usuario, numPalavras) {
 	linha.append(colunaRemover);
 
 	console.log(linha);
+	return linha;
 }
 
+function removeLinha() {
+	console.log("removeLinha chamada!");
+	$(this).parent().parent().remove(); // $() torna o "this" num objeto jQuery
+}
 console.log("Ei!");
+
+$( ".botao-remover" ).click( function (event) {
+	event.preventDefault(); // não executa o href do <a> ou o submit do form
+
+	// quem foi clicado (this) foi a <td>
+	console.log(this); // this = tag HTML
+	console.log($(this)); // $(this) = Objeto jQuery
+	
+	$(this).parent().parent().remove(); // $() torna o "this" num objeto jQuery
+});
 
