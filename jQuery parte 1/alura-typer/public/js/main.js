@@ -1,8 +1,8 @@
 console.log("main.js carregado");
 
 // assim que toda a página terminar de ser carregada
+// linha seguinte é = a "$(document).ready(function () {"
 $( function () {
-// linha anterior = a "$(document).ready(function () {"
 	atualizaTamanhoFrase();
 	inicializaContadores();
 	inicializaCronometro();
@@ -117,60 +117,6 @@ function reiniciaJogo() {
 	campo.removeClass("borda-verde");
 }
 
-function inserePlacar() {
-	var tbody = $(".placar > table > tbody");
-	//var tabela = $(".placar").find("tbody");
-	//console.log("Tabela com css: ");
-	//console.log(tabela);
-	var usuario = "Zecas";
-	var numPalavras = $("#contador-palavras").text();
-
-	var linha = novaLinha(usuario, numPalavras);
-	linha.find(".botao-remover").click(removeLinha);
-
-	tbody.append(linha);
-	//tbody.prepend() adiciona antes
-
-	console.log("Inserido no Placar...");
-}
-
-function novaLinha(usuario, numPalavras) {
-	// criando a tag como string
-	/*var linha = "<tr>"	+
-								"<td>" + usuario + "</td>" +
-								"<td>" + numPalavras + "</td>" +
-								"<td>" + botaoRemover + "</td>" +
-							"</tr>";*/
-	// criando a tag como objeto							
-	var linha	= $("<tr>");
-	var colunaUsuario = $("<td>").text(usuario);
-	var colunaNumPalavras = $("<td>").text(numPalavras);
-	var colunaRemover = $("<td>");
-	
-/*
-  var botaoRemover = 	"<a href='#'>" +
-	    									"<i class='small material-icons'>delete</i>" +
-				    					"</a>";
-*/
-	var link = $("<a>").addClass("botao-remover").attr("href", "#");
-	var icone = $("<i>").addClass("small").addClass("material-icons").text("delete");
-
-	link.append(icone);
-	colunaRemover.append(link);
-	linha.append(colunaUsuario);
-	linha.append(colunaNumPalavras);
-	linha.append(colunaRemover);
-
-	console.log(linha);
-	return linha;
-}
-
-function removeLinha() {
-	console.log("removeLinha chamada!");
-	$(this).parent().parent().remove(); // $() torna o "this" num objeto jQuery
-}
-console.log("Ei!");
-
 $( ".botao-remover" ).click( function (event) {
 	event.preventDefault(); // não executa o href do <a> ou o submit do form
 
@@ -178,6 +124,8 @@ $( ".botao-remover" ).click( function (event) {
 	console.log(this); // this = tag HTML
 	console.log($(this)); // $(this) = Objeto jQuery
 	
-	$(this).parent().parent().remove(); // $() torna o "this" num objeto jQuery
+	//$(this).parent().parent().remove(); // $() torna o "this" num objeto jQuery
+	$(this).parent().parent().hide(); // apenas esconde!
+
 });
 
