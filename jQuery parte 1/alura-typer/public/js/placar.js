@@ -1,5 +1,8 @@
 console.log("placar.js carregado");
 
+$("#botao-placar").click( mostraPlacar );
+$("#botao-sync").click( sincronizaPlacar );
+
 function inserePlacar() {
 	var tbody = $(".placar > table > tbody");
 	//var tabela = $(".placar").find("tbody");
@@ -64,15 +67,14 @@ function novaLinha(usuario, numPalavras) {
 }
 
 function removeLinha() {
-	console.log("removeLinha chamada!");
+	//console.log("removeLinha chamada!");
 	console.log(event);	
 
 	event.preventDefault();
 
 	// no jQuery, $() torna o "this" num objeto jQuery
-	console.log("removeLinha "); 
-	console.log(this); // this = tag HTML
-	console.log($(this)); // $(this) = Objeto jQuery
+	/*console.log(this); // this = tag HTML
+	console.log($(this)); // $(this) = Objeto jQuery*/
 
 	// quem foi clicado (this) foi a <td>
 	var linha = $(this).parent().parent();
@@ -103,7 +105,6 @@ $( ".botao-remover" ).click( removeLinha /*function (event) {
 	removeLinha(); 
 }*/);
 
-$("#botao-placar").click( mostraPlacar );
 function mostraPlacar() {
 	//$(".placar").css("display", "block");
 	//$(".placar").show();
@@ -117,3 +118,45 @@ function mostraPlacar() {
 	//console.log("togglando!");
 }
 
+function sincronizaPlacar () {
+	var placar = [];
+
+	var TRs = $("tbody > tr");
+	console.log(TRs);
+
+	TRs.each(function () {
+		// função each do JQuery: "this" é o item atual da iteração
+		// this é a string com a tag html
+		// $(this) é o objecto jQuery representando a tag html
+		var TR = $(this);
+		var usuario = TR.find("td:nth-child(1)").text();
+		var palavras = TR.find("td:nth-child(2)").text();
+		console.log(usuario + " " + palavras);
+		var score = {
+			usuario: usuario,
+			pontos: palavras
+		};
+		placar.push(score);
+		console.log(placar);
+	});
+
+	// requisição AJAX apenas recebe string ou UM objecto
+	// ... e não um array objetos
+	var dados = {
+		placar: placar,
+	}
+	$.post("http://localhost:3000/placar", dados, function () {
+		console.log("Dados salvos com sucesso no servidor!");
+	});
+}
+
+function atualizaPlacar() {
+	$.get("http://localhost:3000/placar", function ( data ) {
+		/*console.log("Busquei os dados no servidor");
+		console.log(data);*/
+		$(data).each(function () {
+			var linha = novaLinha(this.usuario, this.pontos);
+			$("tbody").append(linha);			
+		});
+	});
+}

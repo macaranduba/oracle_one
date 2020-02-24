@@ -4,6 +4,12 @@ body {
 	pq a o espaço da scroll já estará previamente reservado */
 }
 
+#erro {
+	color: red;
+	display: none;
+	font-weight: bold;
+}
+
 .campo-digitacao {
 	border: 3px solid black;
 	font-family: "Consolas";
@@ -37,6 +43,19 @@ body {
 	display: inline-block;
 }
 
-.placar {
+.placar, #spinner {
 	display: none;
+}
+
+
+#frase-id {
+	width: 50px;
+}
+
+input[type="number"] {
+  text-align: center;
+}
+
+#botao-sync {
+	float: right;
 }
