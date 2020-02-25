@@ -8,7 +8,9 @@ function inserePlacar() {
 	//var tabela = $(".placar").find("tbody");
 	//console.log("Tabela com css: ");
 	//console.log(tabela);
-	var usuario = "Zecas";
+	var usuario = $( '#usuarios > option[selected="selected"]' ).val();
+	console.log(usuario);
+	console.log( $( '#usuarios').val() );
 	var numPalavras = $("#contador-palavras").text();
 
 	var linha = novaLinha(usuario, numPalavras);

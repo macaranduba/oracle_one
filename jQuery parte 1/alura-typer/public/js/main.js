@@ -22,6 +22,12 @@ $( function () {
 	inicializaMarcadores();
   $("#botao-reiniciar").click(reiniciaJogo);
   atualizaPlacar();
+
+  $( '#usuarios' ).selectize( {
+    create: true,
+    sortField: 'text',
+  });
+  //$( '#usuarios' ).css("witdh", "150px");
 });
 
 var tempoInicial = $("#tempo-digitacao").text();

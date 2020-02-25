@@ -60,6 +60,13 @@ input[type="number"] {
 	float: right;
 }
 
+/* Materialize.css deixa selects invisiveis por padrão */
 .select-usuarios, #usuarios {
 	display: inline-block;
 }
+
+.selectize-input {
+	vertical-align: middle;
+	width: 150px;
+}
+
