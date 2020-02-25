@@ -149,6 +149,15 @@ function sincronizaPlacar () {
 	}
 	$.post("http://localhost:3000/placar", dados, function () {
 		console.log("Dados salvos com sucesso no servidor!");
+		$(".tooltip").tooltipster("open").tooltipster("content", "Sucesso ao sincronizar!");;
+	})
+	.always( function () {
+		setTimeout( function () {
+			$(".tooltip").tooltipster("close");
+		}, 1500);
+	})
+	.fail( function () {
+		$(".tooltip").tooltipster("open").tooltipster("content", "Deu zebra!");
 	});
 }
 

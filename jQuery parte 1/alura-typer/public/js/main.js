@@ -28,6 +28,10 @@ $( function () {
     sortField: 'text',
   });
   //$( '#usuarios' ).css("witdh", "150px");
+
+  $('.tooltip').tooltipster({
+  	trigger: "custom"
+  });
 });
 
 var tempoInicial = $("#tempo-digitacao").text();
