@@ -1,5 +1,18 @@
 console.log("main.js carregado");
 
+/*
+	AJAX Same Origin Policy (SOP)
+	pedidos HTTP tem de ser para:
+	 - o mesmo host de origem,
+	 - a mesma porta lógica,
+	 - usando o mesmo protocolo (http, https, ...)
+
+	CORS - Cross Origin Resource Sharing
+	Header de requisição HTTP:
+	Access-Control-Allow-Origin: lista de endereços http/s
+*/
+
+
 // assim que toda a página terminar de ser carregada
 // linha seguinte é = a "$(document).ready(function () {"
 $( function () {
