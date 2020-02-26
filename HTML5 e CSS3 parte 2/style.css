@@ -371,7 +371,7 @@ th, td {
 	width: 560px;
 }
 
-/* screen print (impressora) ? (fala) */
+/* @media aplica-se a "screen", "print" (impressora) e ? (fala) */
 @media screen and (max-width: 480px) {
 	/*body {
 		background: red;

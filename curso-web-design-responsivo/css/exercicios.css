@@ -5,6 +5,8 @@
 	  - se nenhum ELEMENTO na hierarquia ascendente tiver tamanho de FONTE definido, usa o padrão (16px) 
 	  - tamanho de FONTE 1em = 100%, 1.2em = 120%.
 	- max-width em imagens não deixa a imagem crescer mais do que o seu tamanho inicial, mas permite diminuir.
+
+	sublime side bar file icons: https://packagecontrol.io/packages/A%20File%20Icon;
 */
 
 .container {
@@ -50,4 +52,49 @@ header {
 }
 .barra-nav {
     margin: 0.4em 0;
+}
+
+/*
+	https://www.w3.org/TR/css3-mediaqueries/
+	Navegadores antigos como IE6 suportam media types, mas não media queries.
+	Media Types: screen, print;
+	Media Query (trabalhar com layouts condicionais): 
+		- janela do navegador
+			- min-width (o MAIS útil), width (largura exata, pouco útil), max-width 
+			- height (pouco útil), min-height, max-height 
+		- resolução nativa da tela inteira do dispositivo
+			- device-width, device-height (pouco úteis tb; melhor usar o tamanho do navegador)
+		- orientatio: [ portait | landscape ];
+
+	Frameworks responsivos: Twitter Bootstrap, 320 and up, ;
+
+	Preferir "Breakpoints de Conteúdo" ao invés de "Breakpoints de tamanho de dispositivos".
+
+	Media Queries (MQ) mobile-first;
+*/
+
+@media (min-width: 600px) {
+    html {
+        font-size: 1.125em;
+    }
+}
+@media (min-width: 1000px) {
+    html {
+        font-size: 1.25em;
+    }
+}
+
+.secao {
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .secao {
+        width: 50%;
+    }
+}
+@media (min-width: 1000px) {
+    .secao {
+        width: 33.333%;
+    }
 }
