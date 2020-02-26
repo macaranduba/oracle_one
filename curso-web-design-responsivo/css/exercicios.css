@@ -1,9 +1,53 @@
-.secao {
-  float: left;
-  width: 33.333%;
+/*
+	- tamanho do ELEMENTO em % é relativo ao tamanho atual da tela
+		- tamanho do ELEMENTO em "em" significa relativamente ao tamanho da FONTE atual;
+	- tamanho de FONTE em % é relativo ao tamanho da FONTE do elemento pai
+	  - se nenhum ELEMENTO na hierarquia ascendente tiver tamanho de FONTE definido, usa o padrão (16px) 
+	  - tamanho de FONTE 1em = 100%, 1.2em = 120%.
+	- max-width em imagens não deixa a imagem crescer mais do que o seu tamanho inicial, mas permite diminuir.
+*/
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .mini {
     float: left;
     width: 50%;
+}
+
+.logo img {
+	max-width: 100%
+}
+
+.logo,
+.busca,
+.barra-nav,
+.menu-principal {
+   display: inline-block;
+   vertical-align: middle;
+}
+.menu-principal li {
+  float: left;
+}
+
+.logo,
+.secao {
+    padding: 0 1%;
+}
+
+.secao {
+  float: left;
+  width: 33.333%;
+}
+
+header {
+    padding: 0.5em 0;
+}
+.destaques {
+    margin-top: 1em;
+}
+.barra-nav {
+    margin: 0.4em 0;
 }

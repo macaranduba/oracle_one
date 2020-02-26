@@ -1,0 +1,47 @@
+/*
+	Menu trigger
+*/
+
+.menu-trigger,
+.menu-trigger span {
+	display: inline-block;
+	transition: all 0.4s;
+}
+
+.menu-trigger {
+	position: relative;
+	width: 50px;
+	height: 44px;
+	cursor: pointer;
+}
+
+.menu-trigger span {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background-color: #fff;
+	border-radius: 4px;
+	border: 1px solid black;
+}
+
+span:nth-of-type(1) { top: 0; }
+
+span:nth-of-type(2) { top: 20px; }
+
+span:nth-of-type(3) { bottom: 0; }
+
+#menu01:hover span:nth-of-type(1) {
+	transform: translateY(20px) rotate(-135deg);
+	 background-color: red;
+}
+
+#menu01:hover span:nth-of-type(2) {
+	opacity: 0;
+}
+
+#menu01:hover span:nth-of-type(3) {
+	transform: translateY(-20px) rotate(135deg);
+	background-color: red;
+}
+
