@@ -102,29 +102,29 @@ header {
 /* Menu Responsivo */
 @media ( max-width: 600px ) {
 	.barra-nav {
-    background: #f0f0f0;
-    padding: 1em;
-    margin: 0;
+		background: #f0f0f0;
+		padding: 1em;
+		margin: 0;
 
-    height: 100%;
-    width: 90%;
-    max-width: 320px;
+		height: 100%;
+		width: 90%;
+		max-width: 320px;
 
-    position: fixed; /* mostra por cima do conteúdo */
-    z-index: 1;
-    top: 0; 
-    left: -90%;
+		position: fixed; /* mostra por cima do conteúdo */
+		z-index: 1;
+		top: 0; 
+		left: -90%;
 
-    transition: left 0.3s ease-out; /* transition em navegadores antigos: http://caniuse.com/#search=transition*/
+		transition: left 0.3s ease-out; /* transition em navegadores antigos: http://caniuse.com/#search=transition*/
 	}
 
-  .menu-ativo .barra-nav {
-      left: 0;
-  }
+	.menu-ativo .barra-nav {
+		left: 0;
+	}
 
 	.menu-principal li {
-    padding: 1em 0;
-    width: 100%;
+		padding: 1em 0;
+		width: 100%;
 	}
 }
 
