@@ -172,3 +172,38 @@ Uma ideia é fazer isso com pseudo-elemento no <html> quando o menu estiver ativ
 		background: rgba(0,0,0,0.4); /* 0 das três cores, com um nadica de opacidade */
 	}
 }
+
+/*
+	Imagens Responsivas
+	Pixel Físico X 
+		- Device Independent Pixel (DIP) / Google
+		- Pontos / Apple
+		- CSS Pixel / W3C
+
+	@media ( resolution 1ddpx ) {
+		// 100px físicos correspondem a 100 dip
+	}	
+
+	@media ( resolution 2ddpx ) {
+		// 100px físicos correspondem a 200 dip
+	}	
+
+	@media ( min-resolution 1.5ddpx ),
+				 (-webkit-min-device-pixel-ratio: 1.5) // dispositivos antigos
+	{
+		// 100px físicos correspondem a 150 dip
+		.logo {
+			background-image: url(logo@2x.png);
+		}
+	}	
+
+	**** ATENÇÃO **** Não usar frameworks para implementar imagens responsivas
+
+	Tag img de navegadores recentes inclui a tag srcset
+	<img src="logo.png"
+	     srcset="logohd.png 1x, logo.png 1x">
+
+	COMPRESSIVE IMAGES (ex: http://sergiolopes.org/livro-web-mobile/exemplos/retina.html)
+		exportar o arquivo de imagem com maior resolução e menor qualidade funciona em telas melhores (retina) e em telas piores
+
+*/
