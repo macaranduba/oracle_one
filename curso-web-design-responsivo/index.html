@@ -2,6 +2,25 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="with=device-width">
+	<!-- VIEWPORT
+		É considerado má prática desabilitar o zoom do usuário.
+		Mas existe um bug conhecido no iOS que faz com que o viewport não se adapte ao rotacionar o dispositivo. Uma gambiarra que evita o bug é colocar o viewport como <meta name="viewport" content="width=device-width, initial-scale=1">
+	-->
+	<!-- 
+		Firefox -> Tools > Web Developer > Responsive Design View // Ferramentas > Desenvolvedor Web > Modo de design adaptável: permite mais facilmente mudar a resolução da tela
+		
+		Chrome, botão de emular (canto esquerdo superior, parece um celular). 
+			-> emulador de celular com mais opções de celulares;
+			-> user-agent, network
+		  -> emulação de touch screen, arrastar
+		  -> seleção de media queries (lado esquerdo superior, ícone com 3 traços)
+
+		Weinre:
+		  Se você tem Node.js disponível na máquina, instale o weinre para debug remoto em dispositivos genéricos. Útil para navegadores Android antigos, Windows Phone ou iOS se você não tiver um Mac. (você pode instalar o node daqui: http://nodejs.org/)
+		  	a) Abra um terminal e instale o weinre com:
+		  		npm install -g weinre
+	-->
 	<title>Notícias.com</title>
 
 	<link rel="stylesheet" href="css/estilo.css">
@@ -28,6 +47,7 @@
 					<button type="submit">Buscar</button>
 				</form>
 			</nav>
+
 		</div>
 	</header>
 
