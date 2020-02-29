@@ -98,3 +98,77 @@ header {
         width: 33.333%;
     }
 }
+
+/* Menu Responsivo */
+@media ( max-width: 600px ) {
+	.barra-nav {
+    background: #f0f0f0;
+    padding: 1em;
+    margin: 0;
+
+    height: 100%;
+    width: 90%;
+    max-width: 320px;
+
+    position: fixed; /* mostra por cima do conteúdo */
+    z-index: 1;
+    top: 0; 
+    left: -90%;
+
+    transition: left 0.3s ease-out; /* transition em navegadores antigos: http://caniuse.com/#search=transition*/
+	}
+
+  .menu-ativo .barra-nav {
+      left: 0;
+  }
+
+	.menu-principal li {
+    padding: 1em 0;
+    width: 100%;
+	}
+}
+
+@media not all and ( max-width: 600px ) {
+	.menu-abrir,
+	.menu-fechar {
+		display: none;
+	}    
+}
+
+/* Negativa de media queries
+
+Um ponto curioso sobre exercício é a negativa da media query. 
+Antes tínhamos @media (max-width:600px) e agora queremos o inverso dela. Como fazer?
+
+A primeira reação é fazer @media (min-width:600px), mas isso está errado. 
+Como os valores são inclusive, no ponto 600px, as 2 media queries vão ser executadas. 
+
+Então, pensamos em @media (min-width:601px). É quase certo. 
+Realmente a media query anterior vai executar até 600px inclusive, e essa vai de 601px em diante. 
+Mas isso só funcionaria se assumirmos que não existe nenhum valor entre 600px e 601px, como deveria ser. Mas não é. As telas de alta resolução e o zoom do usuário afetam essa conta e criam o conceito de subpixels. 
+Em CSS, um px não é um pixel físico na tela, mas uma medida que depende de vários fatores (e pode ser flutuante).
+
+Assim, a única forma é negar a media query com not. Um detalhe é que @media not (max-width:600px) é uma sintaxe inválida. 
+Precisamos fazer @media not all and (max-width:600px). 
+Note que o not nega a media query toda e não só a parte do all.
+
+*/
+
+/*
+Implemente um fundo cinza na página para obscurecer o conteúdo de fundo quando o menu estiver ativo por cima. 
+Uma ideia é fazer isso com pseudo-elemento no <html> quando o menu estiver ativo.
+*/
+@media ( max-width: 600px ) {
+	.menu-ativo:after {
+		content: "";
+		display: block;
+
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+
+		background: rgba(0,0,0,0.4); /* 0 das três cores, com um nadica de opacidade */
+	}
+}
