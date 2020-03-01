@@ -1,0 +1,36 @@
+/* Obter paleta de cores a partir dos insumos do Designer Gráfico
+	https://html-color-codes.info/ 
+	https://html-color-codes.info/colors-from-image/
+*/
+
+.header {
+	/* border: 1px solid black; */
+	background: url('../img/destaque.jpeg') no-repeat;
+	/* background-repeat: no-repeat; */
+	background-size: cover; 
+	padding: 1em 0;
+}
+
+.header .main-menu {
+	text-align: center
+}
+
+.header .main-menu .menu-item {
+	display: inline-block;
+	padding: 1em .1em;
+}
+
+.header .main-menu .menu-item a {
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	color: white;
+	font-weight: bold;
+	padding: 1em .5em;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background-color 1s ease;
+}
+
+header .main-menu .menu-item a:hover {
+	background-color: #48A3A6;
+}
