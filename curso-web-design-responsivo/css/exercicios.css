@@ -174,7 +174,7 @@ Uma ideia é fazer isso com pseudo-elemento no <html> quando o menu estiver ativ
 }
 
 /*
-	Imagens Responsivas
+	IMAGENS RESPONSIVAS
 	Pixel Físico X 
 		- Device Independent Pixel (DIP) / Google
 		- Pontos / Apple
@@ -207,3 +207,57 @@ Uma ideia é fazer isso com pseudo-elemento no <html> quando o menu estiver ativ
 		exportar o arquivo de imagem com maior resolução e menor qualidade funciona em telas melhores (retina) e em telas piores
 
 */
+
+/*
+	IMAGENS VETORIAIS - baseadas em coordenadas matemáticas, logos, gráficos, tudo exceto fotografia (estas têm de ser com pixels mesmo)
+
+	Texto como texto: 
+	 - por cima de imagens e não na própria imagem como antigamente;
+	Icon fonts: 
+		- icones como fontes (IcoMoon);
+		- fácil troca a cor do ícone, text shadow e tudo o que se aplica a fontes;
+		- desvantagem: icone de uma cor só, como as letras de uma fonte;
+		- nem todos os navegadores os renderizam da mesma forma;
+		- SOLUÇÃO: SVG: 
+			- formato padrão de gráficos vetoriais para a web;
+			- arquivos .svg define a tag <svg> disponível tb para a web
+			- IE 9 para a frente e Android 3 para a frente
+*/
+
+.menu-abrir,
+.menu-fechar {
+	background: none;
+	border: 0;
+	outline: 0;
+	-webkit-appearance: none;
+	font-size: 1.6em;
+	text-indent: -999em;
+}
+
+.menu-abrir {
+	height: 0;
+	width: .75em;
+	padding-top: .125em;
+	border-top: .375em double #000;
+	border-bottom: .125em solid #000;
+
+	vertical-align: middle;
+	margin: 0.5em;
+}
+
+.menu-fechar {
+	position: relative;
+	height: 1em;
+	width: 1em;
+}
+.menu-fechar:before {
+	content: '\00D7';
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-indent: 0;
+}
+
+.logo img {
+    width: 200px;
+}
