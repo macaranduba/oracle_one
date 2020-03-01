@@ -261,3 +261,18 @@ Uma ideia é fazer isso com pseudo-elemento no <html> quando o menu estiver ativ
 .logo img {
     width: 200px;
 }
+
+/*
+	CONTENT PARITY: poder fazer no mobile o que faz no desktop e vice-versa;
+	O contexto de uso não de pode inferir pelo dispositivo sendo usado:
+	 - celular e tablet não necessariamente está a usar 3G na rua e com pressa; pode estar em casa usando Wi-Fi;
+	 - usuári@ de laptop pode estar com pressa!
+	Deve-se disponibilizar/oferecer todo o conteúdo em todos os cenários;
+
+	Mobile-first X Ddesktop-First
+	Touch-Screen
+
+	Tamanho de botões com, no mínimo 50px de lado que equivale a entre 6,7mm e 9,6mm em dispositivos de vários tamanhos diferentes;
+	Espaçamento de botões de no mínimo 2px;
+	Hover (mostrar menu/conteúdo passando o mouse por cima) é má prática porque nem sempre é permitido em dispositivos touch;
+*/
