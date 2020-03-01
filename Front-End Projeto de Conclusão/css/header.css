@@ -3,7 +3,7 @@
 	https://html-color-codes.info/colors-from-image/
 */
 
-body {
+.header {
 	/* border: 1px solid black; */
 	background: url('../img/destaque.jpeg') no-repeat;
 	/* background-repeat: no-repeat; */

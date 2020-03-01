@@ -1,0 +1,4 @@
+.container {
+	width: 96%; /* do tamanho do pai */
+	margin: 0 auto;
+}
