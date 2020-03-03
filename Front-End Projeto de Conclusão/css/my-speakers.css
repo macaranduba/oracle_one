@@ -1,0 +1,43 @@
+.panel-speakers {
+	background-color: orange; /* OK, but the color */
+	padding: 2em; 						/* OK, but the size and the bottom */
+}
+
+.panel-speakers .about-speakers {
+	color: white;				/* OK, but the place */
+	padding: 1em;
+	text-align: center; /* OK */
+}
+
+.panel-speakers .about-speakers .title {
+	font-size: 2em;							/* OK, but the unit */
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.panel-speakers .speakers {
+	text-align: center; /* OK */
+}
+
+.panel-speakers .about-speakers .subtitle {
+	font-size: 1.5em;	/* OK, but the unit */
+}
+
+.panel-speakers .speaker {
+	background-color: white; /* OK */
+	border-radius: .5em;
+	display: inline-block;   /* OK */
+	font-size: 1.25em;			
+	padding: 2em;
+	margin: 1em .5em;				/* OK, but the values */
+	max-width: 12em; 				/* OK */
+	vertical-align: top;		/* OK */
+}
+
+.panel-speakers .speaker .speaker-name { 
+	padding: 1em 0; /* OK, but margin instead */
+ }
+
+.panel-speakers .speaker .speaker-bio {
+	font-weight: bold; /* OK */
+}
