@@ -59,16 +59,6 @@ font-weight: bold;
 	margin-top: .5em;
 }
 
-.header .jumbotron .button {
-	background-color: #48A3A6;
-	border: 1px solid green;
-	border-radius: .25em;
-	color: white;
-	display: inline-block;
-	padding: 1em 2em;
-	text-decoration: none;
-}
-
 .header .jumbotron .panel-subscribe {
 	margin-top: 1em;
 }

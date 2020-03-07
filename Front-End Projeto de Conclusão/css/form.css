@@ -1,0 +1,40 @@
+.panel-form {
+	margin-top: 2em;
+}
+
+.panel-form .title {
+	font-size: 2em;
+	color: #EF7247;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* 
+	class field e suas filhas devem ser movidas para 
+	o base.css para serem usados em outros formulários 
+*/
+
+.field {
+	margin-bottom: 1em;
+}
+
+/* como label é sempre label, a class é desnecessária */
+.field .field-label { 
+	display: block;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: .25em;
+}
+
+.field .field-input {
+	border-radius: .33em;
+	box-shadow: 1px 1px 10px #48A3A6;
+	/* display: block; */
+	font-size: 20px;
+	padding: .5em;
+	width: 100%;
+}
+
+.button-place {
+	text-align: center;
+}
