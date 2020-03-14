@@ -25,6 +25,8 @@ public class TestaVariaveis {
 		try {}
 		catch(Exception ex) {}
 		finally {}
+		
+		String s = "Alura"; // object literal, mais otimizado do que String s = new String("Alura");
 	}
 
 }
