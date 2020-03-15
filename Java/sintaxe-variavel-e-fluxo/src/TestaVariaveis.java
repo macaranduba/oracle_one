@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.util.Comparator;
 
 public class TestaVariaveis {
 
@@ -27,6 +28,20 @@ public class TestaVariaveis {
 		finally {}
 		
 		String s = "Alura"; // object literal, mais otimizado do que String s = new String("Alura");
+		
+		int[] i = new int[]{1};
+		System.out.println(i);
+		//i.length = 2;
+		
 	}
+}
 
+class MeuComparador implements Comparator {
+
+	@Override
+	public int compare(Object o1, Object o2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
 }
